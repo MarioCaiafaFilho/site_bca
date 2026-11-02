@@ -1279,6 +1279,45 @@ blockquote {
 
 }
 
+.footer-company address {
+  margin-top: 8px;
+
+  color: inherit;
+
+  font-style: normal;
+  line-height: 1.65;
+}
+
+.footer-company p,
+.footer-person p {
+  margin-top: 8px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.footer-social strong {
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+  color: var(--color-white);
+}
+
 
 /* ======================================================
    TELAS MUITO PEQUENAS
