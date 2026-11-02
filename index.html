@@ -102,35 +102,48 @@
 
   <!-- DADOS ESTRUTURADOS -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "name": "Mário Caiafa",
-        "jobTitle": "Contador",
-        "description": "Contador com mais de 15 anos de experiência profissional nas áreas administrativa e contábil.",
-        "worksFor": {
-          "@type": "AccountingService",
-          "name": "BCA Empresarial",
-          "areaServed": {
-            "@type": "Country",
-            "name": "Brasil"
-          }
-        }
-      },
-      {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Mário Caiafa",
+      "jobTitle": "Contador",
+      "description": "Contador com mais de 15 anos de experiência profissional nas áreas administrativa e contábil.",
+      "worksFor": {
         "@type": "AccountingService",
-        "name": "BCA Empresarial",
-        "description": "Serviços contábeis para MEI e empresas, Departamento Pessoal e apoio à certificação digital.",
-        "areaServed": {
+        "name": "BCA Empresarial"
+      }
+    },
+    {
+      "@type": "AccountingService",
+      "name": "BCA Empresarial",
+      "description": "Serviços contábeis para MEI e empresas, Departamento Pessoal e Certificação Digital, com atendimento presencial em Paraíba do Sul e região e atendimento online em todo o Brasil.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Paraíba do Sul"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Região Centro-Sul Fluminense"
+        },
+        {
           "@type": "Country",
           "name": "Brasil"
         }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Marechal Castelo Branco, 352",
+        "addressLocality": "Paraíba do Sul",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
       }
-    ]
-  }
-  </script>
+    }
+  ]
+}
+</script>
 </head>
 
 
@@ -249,14 +262,14 @@
           </h1>
 
 
-          <p class="hero-text">
-
-            Contabilidade para MEI e empresas,
-            com orientação clara, acompanhamento próximo
-            e informações que ajudam você a entender melhor
-            o próprio negócio.
-
-          </p>
+         <p class="hero-text">
+  Contabilidade para MEI e empresas,
+  com atendimento presencial em Paraíba do Sul e região
+  e atendimento online em todo o Brasil.
+  Orientação clara, acompanhamento próximo
+  e informações que ajudam você a entender melhor
+  o próprio negócio.
+</p>
 
 
           <!-- BOTÕES -->
@@ -1290,9 +1303,10 @@
 
       <p>CRC-RJ 140459/O</p>
 
-      <p>
-        Atendimento online em todo o Brasil.
-      </p>
+     <p>
+  Atendimento presencial em Paraíba do Sul e região,
+  além de atendimento online em todo o Brasil.
+</p>
     </div>
 
 
