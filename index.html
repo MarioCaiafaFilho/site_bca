@@ -1,1384 +1,387 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link
-  rel="icon"
-  href="assets/img/favicon.ico"
-/>
-<link
-  rel="apple-touch-icon"
-  href="assets/img/favicon.ico"
-/>
-<meta
-  property="og:image"
-  content="https://SEU-ENDERECO/assets/img/mario.caiafa.social.jpg"
-/>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>Mário Caiafa Contador | Contabilidade para MEI e Empresas</title>
+  <title>Gestor BCA | Login</title>
 
- <meta
-  name="description"
-  content="Mário Caiafa é contador com mais de 15 anos de experiência. Contabilidade para MEI e empresas do Simples Nacional, Departamento Pessoal e Certificação Digital, com atendimento online em todo o Brasil."
-/>
-<meta name="author" content="Mário Caiafa" />
+  <style>
+    :root {
+      --azul: #123b60;
+      --azul-escuro: #092b49;
+      --azul-claro: #eaf2f8;
+      --fundo: #f3f6f9;
+      --texto: #203040;
+      --cinza: #64748b;
+    }
 
- <meta
-  name="robots"
-  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-/>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--fundo);
+    }
 
-<meta name="theme-color" content="#123b46" />
+    .pagina {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
 
-  <!-- OPEN GRAPH -->
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:type" content="website" />
+    .apresentacao {
+      background: linear-gradient(
+        145deg,
+        var(--azul),
+        var(--azul-escuro)
+      );
+      color: white;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-  <meta
-  property="og:title"
-  content="Mário Caiafa Contador | Contabilidade para MEI e Empresas"
-/>
+    .marca {
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
 
-  <meta
-  property="og:description"
-  content="Contabilidade próxima, orientação clara e acompanhamento para MEI e empresas, com atendimento online em todo o Brasil."
-/>
+    .apresentacao h1 {
+      font-size: 30px;
+      margin: 0 0 14px;
+    }
 
-  <meta
-  property="og:site_name"
-  content="Mário Caiafa — Contador"
-/>
+    .apresentacao p {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 420px;
+      color: #dce8f2;
+    }
 
-<meta
-  property="og:image:alt"
-  content="Mário Caiafa — Contador"
-/>
-<meta name="twitter:card" content="summary_large_image" />
+    .login-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
 
-<meta
-  name="twitter:title"
-  content="Mário Caiafa Contador | Contabilidade para MEI e Empresas"
-/>
+    .login-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 42px 36px;
+      width: 100%;
+      max-width: 410px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.05);
+    }
 
-<meta
-  name="twitter:description"
-  content="Contabilidade para MEI e empresas, com atendimento próximo e online em todo o Brasil."
-/>
+    .login-box h2 {
+      font-size: 25px;
+      margin: 0 0 12px;
+      color: var(--azul);
+    }
 
-<meta
-  name="twitter:image"
-  content="https://mariocaiafafilho.github.io/site_bca/assets/img/mario-caiafa-social.jpg"
-/>
+    .subtitulo {
+      color: var(--cinza);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
 
- <link
-  rel="canonical"
-  href="https://mariocaiafafilho.github.io/site_bca/"
-/>
+    .botao-google {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      background: white;
+      color: var(--texto);
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+    }
 
-<meta
-  property="og:url"
-  content="https://mariocaiafafilho.github.io/site_bca/"
-/>
+    .botao-google:hover:not(:disabled) {
+      background: var(--azul-claro);
+      border-color: var(--azul);
+    }
 
+    .botao-google:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+    .icone-google {
+      font-size: 20px;
+      font-weight: bold;
+      color: #4285f4;
+    }
 
-  <!-- FONTES -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    .mensagem {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--cinza);
+      overflow-wrap: anywhere;
+    }
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+    .sair {
+      margin-top: 18px;
+      border: none;
+      background: transparent;
+      color: var(--azul);
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    .oculto {
+      display: none;
+    }
 
-  <!-- DADOS ESTRUTURADOS -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "name": "Mário Caiafa",
-      "jobTitle": "Contador",
-      "description": "Contador com mais de 15 anos de experiência profissional nas áreas administrativa e contábil.",
-      "worksFor": {
-        "@type": "AccountingService",
-        "name": "BCA Empresarial"
+    .rodape {
+      margin-top: 35px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--cinza);
+    }
+
+    @media (max-width: 800px) {
+      .pagina {
+        grid-template-columns: 1fr;
       }
-    },
-    {
-      "@type": "AccountingService",
-      "name": "BCA Empresarial",
-      "description": "Serviços contábeis para MEI e empresas, Departamento Pessoal e Certificação Digital, com atendimento presencial em Paraíba do Sul e região e atendimento online em todo o Brasil.",
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Paraíba do Sul"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Região Centro-Sul Fluminense"
-        },
-        {
-          "@type": "Country",
-          "name": "Brasil"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Avenida Marechal Castelo Branco, 352",
-        "addressLocality": "Paraíba do Sul",
-        "addressRegion": "RJ",
-        "addressCountry": "BR"
+
+      .apresentacao {
+        min-height: 220px;
+        padding: 35px 24px;
+      }
+
+      .marca {
+        font-size: 42px;
+      }
+
+      .apresentacao h1 {
+        font-size: 22px;
+      }
+
+      .apresentacao p {
+        font-size: 14px;
+      }
+
+      .login-area {
+        padding: 28px 18px;
+      }
+
+      .login-box {
+        padding: 30px 24px;
       }
     }
-  ]
-}
-</script>
+  </style>
 </head>
-
 
 <body>
 
-  <!-- =====================================================
-       CABEÇALHO
-  ====================================================== -->
+  <div class="pagina">
 
-  <header class="header">
+    <section class="apresentacao">
+      <div class="marca">BCA</div>
 
-    <div class="container header-content">
-
-      <!-- LOGO -->
-      <a
-        href="#inicio"
-        class="brand"
-        aria-label="BCA Empresarial - voltar ao início"
-      >
-
-        <img
-          src="assets/img/logo-bca.png"
-          alt="BCA Empresarial - Bonavere & Caiafa Assessoria Empresarial"
-          class="brand-logo"
-        />
-
-      </a>
-
-
-      <!-- MENU -->
-      <nav
-        class="nav"
-        id="nav"
-        aria-label="Navegação principal"
-      >
-
-        <a href="#inicio">
-          Início
-        </a>
-
-        <a href="#mei">
-          MEI
-        </a>
-
-        <a href="#simples">
-          Empresas
-        </a>
-
-        <a href="#dp">
-          DP
-        </a>
-
-        <a href="#certificado">
-          Certificado
-        </a>
-
-        <a href="#sobre">
-          Sobre
-        </a>
-
-      </nav>
-
-
-      <!-- CTA HEADER -->
-      <a
-        href="#"
-        class="btn btn-small whatsapp-link"
-        data-whatsapp-message="Olá, Mário. Vim pelo seu site e gostaria de conversar sobre minha empresa."
-      >
-        Falar comigo
-      </a>
-
-
-      <!-- MENU MOBILE -->
-      <button
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="nav"
-        type="button"
-      >
-        ☰
-      </button>
-
-    </div>
-
-  </header>
-
-
-
-  <main>
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section
-      class="hero"
-      id="inicio"
-    >
-
-      <div class="container hero-grid">
-
-
-        <!-- TEXTO -->
-        <div class="hero-content">
-
-          <span class="eyebrow">
-            Mário Caiafa — Contador
-          </span>
-
-
-          <h1>
-            Um novo jeito de cuidar da sua empresa.
-          </h1>
-
-
-         <p class="hero-text">
-  Contabilidade para MEI e empresas,
-  com atendimento presencial em Paraíba do Sul e região
-  e atendimento online em todo o Brasil.
-  Orientação clara, acompanhamento próximo
-  e informações que ajudam você a entender melhor
-  o próprio negócio.
-</p>
-
-
-          <!-- BOTÕES -->
-          <div class="hero-actions">
-
-            <a
-              href="#"
-              class="btn whatsapp-link"
-              data-whatsapp-message="Olá, Mário. Conheci seu trabalho pelo site e gostaria de conversar sobre minha empresa."
-            >
-              Falar comigo no WhatsApp
-            </a>
-
-
-            <a
-              href="#servicos"
-              class="btn btn-secondary"
-            >
-              Conhecer meus serviços
-            </a>
-
-          </div>
-
-
-          <!-- PROVA DE CONFIANÇA -->
-          <div class="hero-trust">
-
-            <div class="trust-item">
-
-              <strong>
-                +15 anos
-              </strong>
-
-              <span>
-                de experiência
-              </span>
-
-            </div>
-
-
-            <div class="trust-item">
-
-              <strong>
-                Todo o Brasil
-              </strong>
-
-              <span>
-                atendimento online
-              </span>
-
-            </div>
-
-
-            <div class="trust-item">
-
-              <strong>
-                CRC-RJ
-              </strong>
-
-              <span>
-                140459/O
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- FOTO HERO -->
-        <div class="hero-image">
-
-          <img
-            src="assets/img/mario-hero.png"
-            alt="Mário Caiafa, contador, em ambiente profissional"
-            class="hero-photo"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FAIXA DE SERVIÇOS
-    ====================================================== -->
-
-    <div
-      class="service-strip"
-      aria-label="Principais serviços"
-    >
-
-      <div class="container service-strip-content">
-
-        <span>
-          Contabilidade
-        </span>
-
-        <span>
-          MEI
-        </span>
-
-        <span>
-          Simples Nacional
-        </span>
-
-        <span>
-          Departamento Pessoal
-        </span>
-
-        <span>
-          Certificação Digital
-        </span>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         JEITO DE TRABALHAR
-    ====================================================== -->
-
-    <section
-      class="section section-light"
-      id="servicos"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            Meu jeito de trabalhar
-          </span>
-
-
-          <h2>
-            Sua empresa precisa de mais do que obrigações em dia.
-          </h2>
-
-
-          <p>
-
-            Eu acredito que a contabilidade deve ajudar
-            o empresário a compreender melhor o próprio negócio
-            e tomar decisões com mais segurança.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="cards-grid four-columns">
-
-
-          <article class="card">
-
-            <h3>
-              Atendimento direto
-            </h3>
-
-            <p>
-              Você sabe com quem está falando
-              e tem liberdade para perguntar.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Linguagem simples
-            </h3>
-
-            <p>
-              Informação clara, sem complicação
-              e sem excesso de termos técnicos.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Visão de negócio
-            </h3>
-
-            <p>
-              A contabilidade como ferramenta
-              para compreender melhor a empresa.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Acompanhamento
-            </h3>
-
-            <p>
-              Seu negócio não aparece apenas
-              no dia de calcular impostos.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         MEI
-    ====================================================== -->
-
-    <section
-      class="section"
-      id="mei"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            Contabilidade para MEI
-          </span>
-
-
-          <h2>
-            Ser MEI é simples. Cuidar do negócio nem sempre é.
-          </h2>
-
-
-          <p>
-
-            Como contador para MEI,
-            posso ajudar você a manter sua atividade organizada,
-            cumprir suas obrigações
-            e entender melhor os próximos passos do seu negócio.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="cards-grid two-columns">
-
-
-          <article class="card card-feature">
-
-            <h3>
-              Acompanhamento mensal
-            </h3>
-
-            <p>
-              Para quem quer ter apoio ao longo do ano
-              e manter o MEI organizado.
-            </p>
-
-          </article>
-
-
-
-          <article class="card card-feature">
-
-            <h3>
-              Serviços avulsos
-            </h3>
-
-            <p>
-              Para quem precisa resolver uma situação específica
-              sem contratar acompanhamento mensal.
-            </p>
-
-          </article>
-
-
-        </div>
-
-
-
-        <div class="service-list">
-
-          <span>
-            Declaração anual
-          </span>
-
-          <span>
-            Regularização
-          </span>
-
-          <span>
-            Parcelamentos
-          </span>
-
-          <span>
-            Alterações cadastrais
-          </span>
-
-          <span>
-            Baixa do MEI
-          </span>
-
-          <span>
-            Orientações
-          </span>
-
-        </div>
-
-
-
-        <div class="highlight-block">
-
-          <h3>
-            Seu negócio pode ser pequeno hoje.
-            Seus planos não precisam ser.
-          </h3>
-
-
-          <p>
-
-            Meu objetivo é ajudar você a manter tudo organizado
-            e entender melhor as decisões
-            que envolvem sua atividade.
-
-          </p>
-
-
-          <a
-            href="#"
-            class="btn whatsapp-link"
-            data-whatsapp-message="Olá, Mário. Vim pelo seu site e gostaria de conversar sobre meu MEI."
-          >
-            Quero falar sobre meu MEI
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SIMPLES NACIONAL
-    ====================================================== -->
-
-    <section
-      class="section section-accent"
-      id="simples"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            Contabilidade para Simples Nacional
-          </span>
-
-
-          <h2>
-            Sua empresa cresceu.
-            Sua contabilidade precisa acompanhar.
-          </h2>
-
-
-          <p>
-
-            Trabalho com contabilidade para empresas
-            do Simples Nacional,
-            acompanhando rotinas contábeis,
-            fiscais e tributárias de forma clara e próxima.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="cards-grid three-columns">
-
-
-          <article class="card">
-
-            <h3>
-              Contabilidade
-            </h3>
-
-            <p>
-              Rotinas contábeis,
-              fiscais,
-              apuração de tributos
-              e obrigações.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Orientação
-            </h3>
-
-            <p>
-              Explicações claras
-              para ajudar você a entender melhor a empresa.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Acompanhamento
-            </h3>
-
-            <p>
-              Uma visão mais próxima
-              da realidade e das necessidades do negócio.
-            </p>
-
-          </article>
-
-
-        </div>
-
-
-
-        <div class="highlight-block">
-
-          <h3>
-            Você não precisa falar “contabilês”
-            para entender sua própria empresa.
-          </h3>
-
-
-          <p>
-
-            Quero explicar o que realmente importa
-            de forma clara
-            e estar disponível quando surgir
-            uma dúvida ou decisão importante.
-
-          </p>
-
-
-          <a
-            href="#"
-            class="btn whatsapp-link"
-            data-whatsapp-message="Olá, Mário. Vim pelo seu site e gostaria de conversar sobre a contabilidade da minha empresa."
-          >
-            Quero conversar sobre minha empresa
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         OUTROS REGIMES
-    ====================================================== -->
-
-    <section
-      class="section"
-      id="outros-regimes"
-    >
-
-      <div class="container">
-
-
-        <div class="wide-card">
-
-
-          <div>
-
-            <span class="eyebrow">
-              Outros regimes tributários
-            </span>
-
-
-            <h2>
-              Sua empresa tem outra realidade?
-            </h2>
-
-
-            <p>
-
-              Se sua empresa está no Lucro Presumido
-              ou em outro regime tributário,
-              prefiro primeiro conhecer seu funcionamento,
-              suas necessidades
-              e o tipo de acompanhamento que você procura.
-
-            </p>
-
-          </div>
-
-
-          <a
-            href="#"
-            class="btn whatsapp-link"
-            data-whatsapp-message="Olá, Mário. Minha empresa está em outro regime tributário e gostaria de conversar sobre atendimento contábil."
-          >
-            Vamos conversar
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         DEPARTAMENTO PESSOAL
-    ====================================================== -->
-
-    <section
-      class="section section-light"
-      id="dp"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            Departamento Pessoal
-          </span>
-
-
-          <h2>
-            Cuidar da equipe também faz parte de cuidar da empresa.
-          </h2>
-
-
-          <p>
-
-            Ofereço serviço de Departamento Pessoal para empresas,
-            inclusive quando a contabilidade está
-            com outro profissional ou escritório.
-
-            A proposta é tornar as rotinas trabalhistas
-            mais organizadas, claras e acompanhadas.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="service-list large">
-
-          <span>
-            Admissões
-          </span>
-
-          <span>
-            Folha de pagamento
-          </span>
-
-          <span>
-            Férias
-          </span>
-
-          <span>
-            Rescisões
-          </span>
-
-          <span>
-            eSocial
-          </span>
-
-          <span>
-            Encargos
-          </span>
-
-          <span>
-            Afastamentos
-          </span>
-
-          <span>
-            Orientações
-          </span>
-
-        </div>
-
-
-
-        <div class="highlight-block">
-
-          <h3>
-            Você não precisa trocar de contador
-            para contratar meu Departamento Pessoal.
-          </h3>
-
-
-          <a
-            href="#"
-            class="btn whatsapp-link"
-            data-whatsapp-message="Olá, Mário. Gostaria de saber mais sobre o serviço de Departamento Pessoal."
-          >
-            Falar sobre Departamento Pessoal
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CERTIFICAÇÃO DIGITAL
-    ====================================================== -->
-
-    <section
-      class="section"
-      id="certificado"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            Certificação Digital
-          </span>
-
-
-          <h2>
-            Seu certificado digital, sem complicação.
-          </h2>
-
-
-          <p>
-
-            Emissão de certificados digitais
-            e-CPF e e-CNPJ,
-            com atendimento online ou presencial
-            e orientação durante o processo.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="cards-grid two-columns">
-
-
-          <article class="card card-feature">
-
-            <h3>
-              e-CPF
-            </h3>
-
-            <p>
-              Certificado digital para pessoa física.
-            </p>
-
-          </article>
-
-
-
-          <article class="card card-feature">
-
-            <h3>
-              e-CNPJ
-            </h3>
-
-            <p>
-              Certificado digital para empresas.
-            </p>
-
-          </article>
-
-
-        </div>
-
-
-
-        <div class="center-action">
-
-          <a
-            href="#"
-            class="btn whatsapp-link"
-            data-whatsapp-message="Olá, Mário. Gostaria de informações sobre certificado digital."
-          >
-            Solicitar certificado digital
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SOBRE
-    ====================================================== -->
-
-    <section
-      class="section section-dark"
-      id="sobre"
-    >
-
-      <div class="container about-grid">
-
-
-        <!-- FOTO -->
-        <div class="about-image">
-
-          <img
-            src="assets/img/mario-sobre.png"
-            alt="Mário Caiafa, contador, trabalhando em seu escritório"
-            class="about-photo"
-            loading="lazy"
-            decoding="async"
-          />
-
-        </div>
-
-
-
-        <!-- TEXTO -->
-        <div class="about-content">
-
-
-          <span class="eyebrow">
-            Quem é Mário Caiafa
-          </span>
-
-
-          <h2>
-            Experiência para entender números.
-            Visão para entender o negócio.
-          </h2>
-
-
-          <p>
-
-            Sou Mário Caiafa,
-            contador,
-            com mais de 15 anos de experiência profissional
-            nas áreas administrativa e contábil.
-
-          </p>
-
-
-
-          <ul class="qualification-list">
-
-            <li>
-              Bacharel em Ciências Contábeis
-            </li>
-
-            <li>
-              Bacharel em Administração
-            </li>
-
-            <li>
-              Tecnólogo em Gestão da Produção Industrial
-            </li>
-
-            <li>
-              Pós-graduado em Gestão da Qualidade
-            </li>
-
-            <li>
-              Pós-graduado em Segurança do Trabalho
-            </li>
-
-          </ul>
-
-
-
-          <blockquote>
-
-            “Eu acredito que o contador precisa estar
-            ao lado do empresário.”
-
-          </blockquote>
-
-
-
-          <p>
-
-            Para mim,
-            contabilidade não é apenas calcular impostos
-            ou entregar guias.
-
-            Ela deve transformar números
-            em informações úteis
-            para quem precisa tomar decisões.
-
-          </p>
-
-
-
-          <div class="signature">
-
-            <strong>
-              Mário Caiafa
-            </strong>
-
-            <span>
-              Contador — CRC-RJ 140459/O
-            </span>
-
-          </div>
-
-
-
-          <a
-            href="#"
-            class="btn btn-light whatsapp-link"
-            data-whatsapp-message="Olá, Mário. Conheci seu trabalho pelo site e gostaria de conversar."
-          >
-            Quero conversar com o Mário
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FORMA DE ATENDER
-    ====================================================== -->
-
-    <section
-      class="section"
-      id="atendimento"
-    >
-
-      <div class="container">
-
-
-        <div class="section-heading center">
-
-          <span class="eyebrow">
-            Meu atendimento
-          </span>
-
-
-          <h2>
-            O que você pode esperar.
-          </h2>
-
-        </div>
-
-
-
-        <div class="cards-grid four-columns">
-
-
-          <article class="card">
-
-            <h3>
-              Próximo
-            </h3>
-
-            <p>
-              Você conversa diretamente comigo.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Claro
-            </h3>
-
-            <p>
-              Explicações sem complicação desnecessária.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Atento
-            </h3>
-
-            <p>
-              Quero compreender a realidade da sua empresa.
-            </p>
-
-          </article>
-
-
-
-          <article class="card">
-
-            <h3>
-              Presente
-            </h3>
-
-            <p>
-              Acompanhamento ao longo
-              do desenvolvimento do negócio.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CTA FINAL
-    ====================================================== -->
-
-    <section
-      class="final-cta"
-      id="contato"
-    >
-
-      <div class="container final-cta-content">
-
-
-        <span class="eyebrow">
-          Vamos conversar?
-        </span>
-
-
-        <h2>
-          Conte para mim um pouco sobre sua empresa.
-        </h2>
-
-
-        <p>
-
-          Não precisa preparar apresentação,
-          relatório ou planilha.
-
-          Me conte o que está acontecendo
-          e começamos por aí.
-
-        </p>
-
-
-        <a
-          href="#"
-          class="btn btn-light whatsapp-link"
-          data-whatsapp-message="Olá, Mário. Vim pelo seu site e gostaria de conversar sobre minha empresa."
-        >
-          Falar com o Mário no WhatsApp
-        </a>
-
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =====================================================
-       RODAPÉ
-  ====================================================== -->
-
-<footer class="footer">
-
-  <div class="container footer-grid">
-
-    <!-- MÁRIO -->
-    <div class="footer-person">
-      <strong>Mário Caiafa — Contador</strong>
-
-      <p>CRC-RJ 140459/O</p>
-
-     <p>
-  Atendimento presencial em Paraíba do Sul e região,
-  além de atendimento online em todo o Brasil.
-</p>
-    </div>
-
-
-    <!-- BCA / DADOS INSTITUCIONAIS -->
-    <div class="footer-company">
-      <strong>BCA Empresarial</strong>
+      <h1>Gestor BCA</h1>
 
       <p>
-        CNPJ: 29.162.059/0001-68
+        Um ambiente para organizar atividades,
+        acompanhar prazos e gerenciar as rotinas
+        do escritório com praticidade e segurança.
       </p>
+    </section>
 
-      <address>
-        Avenida Marechal Castelo Branco, 352<br />
-        Centro — Paraíba do Sul/RJ
-      </address>
-    </div>
+    <section class="login-area">
+      <div class="login-box">
 
+        <h2>Bem-vindo!</h2>
 
-    <!-- REDES SOCIAIS -->
-    <div class="footer-social">
-      <strong>Redes sociais</strong>
+        <p class="subtitulo">
+          Entre com sua conta Google para
+          acessar o Gestor BCA.
+        </p>
 
-      <a
-        href="https://www.instagram.com/bca.contabilidade/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram da BCA Contabilidade"
-      >
-        @bca.contabilidade
-      </a>
+        <button
+          id="botaoEntrar"
+          class="botao-google"
+          type="button"
+          disabled
+        >
+          <span class="icone-google">G</span>
+          Entrar com Google
+        </button>
 
-      <a
-        href="https://www.instagram.com/mariocaiafafilho/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram de Mário Caiafa"
-      >
-        @mariocaiafafilho
-      </a>
-    </div>
+        <p
+          id="mensagem"
+          class="mensagem"
+          role="status"
+          aria-live="polite"
+        >
+          Preparando autenticação...
+        </p>
+
+        <button
+          id="botaoSair"
+          class="sair oculto"
+          type="button"
+        >
+          Sair da conta
+        </button>
+
+        <div class="rodape">
+          Gestor BCA — Acesso restrito
+        </div>
+
+      </div>
+    </section>
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 
-  <div class="container footer-bottom">
-    <p>
-      © <span id="current-year"></span> Mário Caiafa.
-      Todos os direitos reservados.
-    </p>
-  </div>
+  <script>
+    // CONFIGURAÇÃO PÚBLICA DO SUPABASE
 
-</footer>
+    const SUPABASE_URL =
+      "https://pdvipfzbtpsuenpumktb.supabase.co";
 
+    const SUPABASE_PUBLIC_KEY =
+      "sb_publishable_IOUb057J98PySmHjKai1Eg_mR4rSIjB";
 
+    // URL oficial do sistema, já cadastrada no Supabase.
+    const SITE_URL =
+      "https://mariocaiafafilho.github.io/gestor-bca-web/";
 
-  <!-- =====================================================
-       WHATSAPP FLUTUANTE
-  ====================================================== -->
+    const botaoEntrar =
+      document.getElementById("botaoEntrar");
 
-  <a
-    href="#"
-    class="whatsapp-floating whatsapp-link"
-    data-whatsapp-message="Olá, Mário. Vim pelo seu site e gostaria de conversar."
-    aria-label="Falar com Mário no WhatsApp"
-  >
-    WhatsApp
-  </a>
+    const botaoSair =
+      document.getElementById("botaoSair");
 
+    const mensagem =
+      document.getElementById("mensagem");
 
+    function mostrarMensagem(texto) {
+      mensagem.textContent = texto;
+    }
 
-  <!-- JAVASCRIPT -->
-  <script src="script.js"></script>
+    function mostrarDesconectado() {
+      botaoEntrar.classList.remove("oculto");
+      botaoSair.classList.add("oculto");
+      botaoEntrar.disabled = false;
+
+      mostrarMensagem(
+        "Entre com sua conta Google. " +
+        "O acesso aos módulos dependerá de autorização."
+      );
+    }
+
+    function mostrarAutenticado(usuario) {
+      botaoEntrar.classList.add("oculto");
+      botaoSair.classList.remove("oculto");
+
+      mostrarMensagem(
+        "Conta Google autenticada: " +
+        (usuario.email || "E-mail não disponível") +
+        ". O acesso ao sistema ainda está sendo configurado."
+      );
+    }
+
+    if (
+      SUPABASE_PUBLIC_KEY ===
+      "COLE_AQUI_SUA_CHAVE_PUBLISHABLE"
+    ) {
+      mostrarMensagem(
+        "Configure a chave pública do Supabase " +
+        "no arquivo index.html."
+      );
+    } else if (!window.supabase) {
+      mostrarMensagem(
+        "Não foi possível carregar a biblioteca do Supabase."
+      );
+    } else {
+      const cliente = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLIC_KEY
+      );
+
+      botaoEntrar.addEventListener("click", async () => {
+        botaoEntrar.disabled = true;
+        mostrarMensagem("Abrindo login Google...");
+
+        const { error } =
+          await cliente.auth.signInWithOAuth({
+            provider: "google",
+            options: {
+              redirectTo: SITE_URL
+            }
+          });
+
+        if (error) {
+          mostrarMensagem(
+            "Não foi possível iniciar o login: " +
+            error.message
+          );
+
+          botaoEntrar.disabled = false;
+        }
+      });
+
+      botaoSair.addEventListener("click", async () => {
+        const { error } = await cliente.auth.signOut();
+
+        if (error) {
+          mostrarMensagem(
+            "Não foi possível sair: " + error.message
+          );
+          return;
+        }
+
+        mostrarDesconectado();
+      });
+
+      async function verificarSessao() {
+        const { data, error } =
+          await cliente.auth.getUser();
+
+        if (error || !data.user) {
+          mostrarDesconectado();
+          return;
+        }
+
+        mostrarAutenticado(data.user);
+      }
+
+      cliente.auth.onAuthStateChange(
+        (_evento, sessao) => {
+          if (!sessao) {
+            mostrarDesconectado();
+          } else {
+            mostrarAutenticado(sessao.user);
+          }
+        }
+      );
+
+      verificarSessao();
+    }
+  </script>
 
 </body>
 </html>
